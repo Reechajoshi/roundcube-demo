@@ -1,0 +1,43 @@
+VERSION                COMMENT
+----------------------------------------------------------------------------------------
+1.0                    - Initial release
+1.0.1                  - Fixed image paths for Classic, Litecube(f) skins
+1.0.2                  - Shared calendars via CalDAV (requires calendar + sabredav)
+1.0.3                  - Changed token management
+1.0.4 - 1.0.9          - Code improvements
+1.0.10                 - Share hint for read/write access was misplaced
+1.0.11                 - Fixed paths for getimagesize
+1.0.12                 - Code cleanup
+1.0.13                 - Set referrer for remote requests
+1.0.14 - 1.0.15        - identities_imap compatibility
+1.0.16                 - Roundcube 0.9 compatibility
+1.0.17                 - Fix SabreDAV detection
+1.0.18                 - Delete icon for ics/feed access was not displayed if
+                         database backend was selected
+2.0                    - Compatibility with 0.8 and 0.9 branch
+                       - CalDAVs and Feeds subscriptions from calendar GUI (big change!)
+2.0.1                  - Show default CalDAV in subscription table (currently disabled
+                         only - subscribe/unsubscribe follows)
+2.0.2                  - Default CalDAV subsciption/unsubscription
+2.0.3                  - Subscribe/unsubscribe public caldavs
+2.0.4                  - Hide subscribed CalDAVs if database backend is selected
+2.0.5                  - Complete subscription implementation
+2.0.6 - 2.0.9          - Minor GUI improvements
+2.1                    - Import events into selectable calendars/categories
+2.1.1                  - Import invitation into selectable calendars/categories
+2.1.2                  - Show import events box in preview pane only if ics contains
+                         more than one event.
+2.1.3                  - Fixed a bug when calendar was disabled by Plugin Manager
+2.1.4                  - Minor GUI improvements
+2.1.5                  - Search: Find events with default category
+2.1.6 - 2.1.7          - IE: Fix unwanted line bread in invations view
+2.1.8                  - IP based SabreDAV callbacks
+2.1.9                  - Minor GUI improvements
+2.1.10                 - startup hook was not executed for cURL requests
+2.1.11                 - Show subscription menu even if the is only one CalDAV
+2.1.12 - 2.1.13        - Compatibility adjustments for sabredav 5.1
+3.0 - 3.0.2            - Implemented Tasks
+3.0.3                  - Removed Google related stuff (old Google CalDAV access will be
+                         deprecated by Google on 09/16/2013)
+3.0.4                  - Use cURL to check if DAV is SabreDAV
+3.0.5 - 3.0.7          - Implemented flash based copy to clipboard

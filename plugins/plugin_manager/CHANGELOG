@@ -1,0 +1,127 @@
+VERSION                COMMENT
+-----------------------------------------------------------------------------------
+16.0                   - It's time for a changelog
+16.0.1 - 16.0.3        - GUI improvements for Larry minimode toggle
+16.0.4                 - New config option whether or not to use SSL
+16.0.5                 - PostgreSQL support
+16.0.6                 - Minor changes
+16.0.8                 - Bug fix: only admins stored in database were recognized
+16.0.9                 - Removed config option 'Show updates after login'
+16.0.10                - Implemented database versioning
+16.1                   - Use GET when requesting a customer ID
+16.1.1                 - Don't display status message in iframes
+16.1.2                 - Added sqlite support
+16.2.0 - 16.2.3        - Require existence of authentication file in Roundcube
+                         root folder before a Plugin Manager Admin is created
+                         automatically
+17.0                   - Improved quick deployment
+18.0 - 18.0.4          - Implemented GUI to add/modifiy/remove Plugin Manager
+                         Administrators
+19.0                   - Implemented plugins self-registration
+19.0.1                 - Fixed a bug in PostgreSQL script
+20.0                   - Implemented GUI to enable/disable plugins by Plugin
+                         Manager Administrators
+20.0.1 - 20.0.2        - Roundcube 0.9.2 release
+20.0.3                 - GUI improvements
+21.0 - 21.0.4          - Add third party plugins by GUI
+                       - Database versioning implemented into GUI (0.9 branch only)
+21.0.5                 - Show recommended plugins in update page
+21.0.6                 - Fix: PHP Warning:  Invalid argument supplied for foreach()
+                         in ./plugins/plugin_manager/plugin_manager.php on line 3016
+21.0.7 - 21.0.8        - Implemented skins binding
+21.0.9                 - Enable/disable "About" link and MyRoundcube watermark
+21.0.10 - 21.0.13      - GUI improvements (indicate if a plugin is not configured)
+21.0.14                - Strip slashes before config code is passed to eval
+21.0.15 - 21.0.19      - Roundcube 0.9.3
+21.0.20 - 21.0.23      - HTML code editor improvements
+21.0.24                - Added sqlite3 to database map
+21.0.25                - HTML code editor improvements
+21.1 - 21.1.1          - Roundcube 0.9.4
+21.1.2                 - Added jsdialogs plugin to defaults
+21.1.3                 - Added jappix4roundcube to defaults
+21.1.4                 - Removed scrollbar fix
+21.1.5 - 21.1.6        - Fixed register action error 'plugin.summary'
+21.1.7                 - Jappix4Roundcube adjustments
+21.1.8 - 21.1.10       - Added tabbed plugin to defaults
+21.1.11                - Fixed navigation handler
+21.1.12 - 21.1.13      - Fixed logo click for tabbed plugin
+21.1.14 - 21.1.15      - Always use https to download plugins
+21.1.16                - Lock database configuration section properly for demo accounts
+21.1.17                - Fix bug in defaults override
+21.1.18                - Added compose_myroundcube to defaults
+21.1.19                - Added vcard_send to defaults
+21.1.20 - 21.1.22      - Adjustments regarding deprecated plugins
+21.2.23                - Submit server IP when downloading plugins to fight PayPal
+                         Chargebacks - of course only if user has agreed
+22.0                   - Require a Plugin Manager update
+22.0.1                 - Don't hide checkboxes in update page on low screen resolution
+22.0.2                 - Improved visitor IP detection
+22.0.3                 - Added companyaddressbook to defaults
+22.0.4 - 22.0.5        - Added debug code
+22.0.6                 - Skip companyaddressbook_plus (helper) in plugin configuration section
+22.0.7                 - Prevent logging of 'Illegal string offset' warnings (PHP 5.4)
+22.0.8 - 22.0.9        - Backwards compatibility Roundcube 0.8 branch.
+22.0.10                - Inject MyRoundcube watermark into blank pages for identities and folders steps
+22.0.11 - 22.0.12      - Added mysqladmin to defaults
+22.0.13 - 22.0.14      - Implemented mysqladmin plugin
+22.0.15                - Added User-Agent header to cURL requests
+22.0.16                - Added hmail_publicfolder to defaults
+23.0                   - Prepair to be ready for Roundcube 1.0
+23.0.1                 - Bugfix: https://code.google.com/p/myroundcube/issues/detail?id=606
+23.0.2 - 23.0.3        - Bugfix: http://trac.roundcube.net/ticket/1489486
+23.0.4                 - Added google_oauth2 plugin to defaults
+23.0.5                 - Bugfix: Don't break frame when clicking on missing plugin link
+23.0.6                 - Bugfix: Display plugin version even if plugin is not registered/loaded automatically
+24.0                   - Separate branch for Roundcube 0.9
+25.0                   - Roundcube 1.0 compatibility
+25.0.1                 - Remove importmessages plugin from defaults
+25.0.2                 - Use rcube_utils::remote_addr() for IP detection
+25.0.3                 - Workaround for server or php specific escaped quotes when saving preferences
+                         into database
+25.0.4                 - Add remove_attachments to defaults
+25.0.5                 - Roundcube compatibility check
+25.0.6                 - Skip calendar_plus and carddav_plus in plugins selector
+25.0.7                 - End injected javascript consequently by semicolon
+25.0.8                 - Better layout for low resolutions screens
+25.0.9                 - Close button for MyRoundcube messages
+25.0.10                - Add cookie_config to defaults
+25.0.11                - Add imap_threads to defaults
+25.0.12                - Bug fix: https://code.google.com/p/myroundcube/issues/detail?id=647
+25.0.13                - Add hmail_search to defaults
+25.0.14                - Hide hmail_* plugins if usage of hmail_* plugins is disabled
+25.0.15                - Configurable real-time translation account
+25.0.16                - Add serveral plugins to plugins settings combobox
+25.0.17                - Remove global_alias plugin
+25.0.18                - Remove globaladdressbook plugin from list of supported third party plugins
+25.0.19 - 25.0.20      - Attempt to fix not reproduceable issue that maintenance mode can't be disabled
+25.0.21                - Add sabredav_migrate to defaults
+25.0.22                - Remove sabredav_migrate from defaults
+25.0.23                - Add hmail_sabredav_sync to defaults
+25.0.24                - Add hmail_roundcube_sync to defaults
+25.0.25                - Roundcube 1.0.1 release
+25.0.26                - Bugfix: Plugins binding (hide checkboxes if plugin is intended to be binded
+                                 to a specific settings value)
+25.0.27                - Add limit_skins plugin to defaults
+25.0.28                - Added MSSQL support (third party contribution (https://asphostpage.com/)
+25.0.29                - Remove copymessage from defaults
+25.0.30                - Remove default Roundcube plugins from 'Third party plugins' section unless required
+                         as a dependency by any MyRoundcube plugin
+25.0.31                - Update $nodocs property
+25.0.32                - Implement rcube_db::limitquery
+25.0.33                - Remove css .boxcontent overwrite (Larry)
+25.0.34                - Remove IF NOT EXISTS clause from PostgreSQL database script
+25.0.35                - Fix loop in 'Settings' section if a helper plugin is missing
+25.0.36                - Implement translation accounts for delegated administrators
+25.0.37                - Add custom_login_logout to defaults
+                       - Remove newsletter subscription
+                       - Add forum registration link
+25.0.38                - Adopt markbuttons plugin
+26.0                   - Provide Roundcube Core Patches in a single download location
+26.0.1                 - HTTPS and better wording for Core Patches downloads
+26.0.2 - 26.0.3        - Update notifications feature
+26.0.4                 - Fix anchor link navigation (plugin selector) if anchor is out of viewport
+26.0.5                 - Scroll up when tabs for plugins navigation are clicked
+26.0.6 - 26-0.7        - Compatibility with pwtools 3.1.x
+26.0.8                 - Roundcube 1.0.3 release
+26.0.9                 - Release new core patch version
+26.0.10                - Fix "Customer account" link in Plugin Manager Center

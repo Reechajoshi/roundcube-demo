@@ -1,0 +1,49 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+<head>
+<title><roundcube:object name="pagetitle" /></title>
+<roundcube:include file="/includes/links.html" />
+</head>
+
+<!-- BODY TAG -->
+<roundcube:if condition="env:extwin" /><body class="noscroll extwin"><roundcube:else /><body class="noscroll"><roundcube:endif />
+
+<!-- INCLUDE HEADER -->
+<roundcube:include file="/includes/header.html" />
+
+<!-- MAINSCREEN -->
+<div id="mainscreen" class="offset">
+
+<!-- VOICE TAG -->
+<h1 class="voice"><roundcube:label name="settings" /> : <roundcube:label name="identities" /></h1>
+
+<!-- SETTIGS TAG -->
+<roundcube:include file="/includes/settingstabs.html" />
+
+<!-- RIGHT PANE -->
+<div id="settings-right" role="main" aria-labelledby="aria-label-managelist">
+    
+    <!-- COLUMN 2 -->
+    <div id="managelist" class="uibox listbox">
+    
+        <!-- COLUMN 2 HEADING -->
+        <h2 class="boxtitle" id="aria-label-managelist"><roundcube:label name="manage" /></h2>
+    
+        <!-- COLUMN 2 CONTENT -->
+		<div class="scroller">
+			<roundcube:object name="managelist" id="identities-table" class="listing" cellspacing="0" noheader="true" role="listbox" />
+		</div>
+	</div>
+	
+	<div id="manage_details" class="uibox contentbox">
+		<div class="iframebox">
+			<roundcube:object name="manageframe" id="preferences-frame" style="width:100%; height:100%" frameborder="0" src="/watermark.html" />
+		</div>
+		<roundcube:object name="message" id="message" class="statusbar" />
+	</div>	
+</div>
+
+<roundcube:include file="/includes/footer.html" />
+
+</body>
+</html>

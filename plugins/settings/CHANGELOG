@@ -1,0 +1,7 @@
+VERSION                COMMENT
+-----------------------------------------------------------------------------------------------------------------
+4.3                    - It's time for a Changelog
+4.4                    - Simplify plugin (remove config)
+4.4.1                  - Larry CSS adjustments
+4.5                    - Move Server Settings section to Account Administration section
+4.5.1                  - Make plugin independent from plugin_manager plugin

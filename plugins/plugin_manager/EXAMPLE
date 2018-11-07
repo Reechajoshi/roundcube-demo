@@ -1,0 +1,36 @@
+/*************************
+ *                       *
+ * Full featured example *
+ *                       *
+ *************************/
+
+//    'myplugin' => array( /* the plugin name */
+//      'label_name' => 'markbuttons.pluginname', /* label for the plugin */
+//      'label_description' => 'markbuttons.plugindescription', // label for the plugin description
+//      'label_inject' => false, // see idle_timeout for a valid expample; possible sources: eval, string, config or session
+//      'unset' => array(), /* an array of configs which have to be wiped out of preferences,
+//                              if plugin is set to inactive by the user */
+//      'localization' => 'localization', /* localization folder relative to plugin root folder */
+//      'buttons' => false, /* false or an array with valid jquery selector -> inactive: $('validselector').show() */
+//      'domains' => false, /* array with email domains, true or false */
+//      'hosts' => false, /* an array with hosts, true or false */
+//      'config' => './?_task=settings&_action=edit-prefs&_section=folders&_framed=1', /* false or a link to plugin configuration */
+//      'section' => 'folders', /* false or Roundcube's configuration section */
+//      'reload' => false, /* Reload after saving */
+//      'browser' => '$test = $browser->mz || $browser->chrome;', /* false or PHP code based on Roundcube's rcube_browser class */
+//      'eval' => array('$this->register_action("plugin.summary", array($this, "plugin_manager_dummy"));'), /* false or an unindexed array with PHP code to execute */
+//      'uninstall' => array('hide_blockquote_limit'), /* give the user the choice to remove prefs from server permanently
+//                                 false or missing: keep prefs
+//                                 true: autodetect prefs if supported by plugin
+//                                 or an unindexed array with pref keys */
+//      'uninstall_request' => array(
+//        'action' => 'plugin.hmail_autoresponder-uninstall',
+//        'method' => 'post',
+//      ), /* a registered plugin action and the method of calling the request */
+//      'uninstall_force' => false, /* uninstall request must be exectuted */
+//      'skins' => false, /* false or an array with skins where the plugin should be active array('classic', 'larry') */ 
+//      'active' => false /* load plugin by default */
+//      'protected' => true, /* an array of domains where users are not allowed to overwrite plugin defaults or
+//                                true | false or
+//                                an associated config key */
+//    ),

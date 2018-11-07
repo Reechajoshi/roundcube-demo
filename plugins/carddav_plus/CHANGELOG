@@ -1,0 +1,28 @@
+VERSION                COMMENT
+-------------------------------------------------------------------------------------------
+1.0                    - Initial release
+1.0.1                  - Fixed a bug in automatic addressbook settings section
+1.0.2 - 1.0.3          - Implemented addressbook sharing (requires sabredav 4.0.1 or newer)
+1.0.4                  - Set referrer for remote requests
+2.0                    - Added support for categories field (used by many clients to group
+                         contacts or to search for contacts).
+                         NOTE: Roundcube contact groups are treated as categories
+2.0.1                  - Fix label for default addressbook
+2.0.2                  - Show local addressbooks if configured
+2.0.3 - 2.0.4          - Roundcube 0.9 compatibility
+2.0.5                  - Fix SabreDAV detection
+3.0                    - Implemented advanced CalDAV addressbooks search
+3.0.1                  - Bug fix: Process placeholders in default_host config
+3.0.2                  - IP based SabreDAV callbacks
+3.0.3                  - Removed Google contacts related parts of the code
+3.0.4                  - Plugin startup hook did not load on cURL requests
+3.0.5 - 3.0.6          - Compatibility adjustment for sabredav 5.1
+3.0.7                  - Use cURL by default to check if DAV is SabreDAV
+3.0.8 - 3.0.9          - Flash based copy to clipboard
+3.0.10                 - Bind zclip on $(window).load
+3.0.11 - 3.0.12        - Send invitation for addressbook sharing
+3.0.13                 - Fix error logging if config default_host is empty
+3.0.14                 - CardDAV invitation: Place signature always at bottom
+3.0.15                 - Implementation of oAuth2 for Google CardDAV access
+3.0.16                 - Don't check for SabreDAV if URL is empty
+3.0.17                 - Remove rcube_id from SabreDAV (users table)

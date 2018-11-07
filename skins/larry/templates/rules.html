@@ -1,0 +1,52 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+<head>
+<title><roundcube:object name="pagetitle" /></title>
+<roundcube:include file="/includes/links.html" />
+</head>
+
+<!-- BODY TAG -->
+<roundcube:if condition="env:extwin" /><body class="noscroll extwin"><roundcube:else /><body class="noscroll"><roundcube:endif />
+
+<!-- INCLUDE HEADER -->
+<roundcube:include file="/includes/header.html" />
+
+<!-- MAINSCREEN -->
+<div id="mainscreen" class="offset">
+
+<!-- VOICE TAG -->
+<h1 class="voice"><roundcube:label name="settings" /> : <roundcube:label name="identities" /></h1>
+
+<!-- SETTIGS TAG -->
+<roundcube:include file="/includes/settingstabs.html" />
+
+<!-- RIGHT PANE -->
+<div id="settings-right" role="main" aria-labelledby="aria-label-ruleslist">
+	
+	<!-- COLUMN 2 -->
+	<div id="ruleslist" class="uibox listbox">
+        
+        <!-- COLUMN 2 HEADING -->
+        <h2 class="boxtitle" id="aria-label-ruleslist"><roundcube:label name="rules" /></h2>
+        
+        <!-- COLUMN 2 CONTENT -->
+        <div class="scroller">
+			<roundcube:object name="ruleslist" id="identities-table" class="listing" cellspacing="0" noheader="true" role="listbox" />
+		</div>
+	</div>
+	<!-- END OF COLUMN 2 -->
+
+	<!-- COLUMN 3 -->
+	<div id="rules_details" class="uibox contentbox">
+		<div class="iframebox">
+			<roundcube:object name="rulesframe" id="preferences-frame" style="width:100%; height:100%" frameborder="0" src="/watermark.html" />
+		</div>
+	</div>	
+	<!-- END OF COLUMN 3 -->
+</div>
+<!-- END OF RIGHT SIDE -->
+
+<roundcube:include file="/includes/footer.html" />
+
+</body>
+</html>

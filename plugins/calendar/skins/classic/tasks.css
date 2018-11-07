@@ -1,0 +1,36 @@
+#tasks {
+  display: none;
+}
+
+#tasks table {
+  table-layout: fixed;
+}
+
+#tasks th, td {
+  font-size: 9px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid black !important;
+}
+
+#tasks th a {
+  text-decoration: none;
+}
+
+#tasks .count {
+  display: none;
+  font-size: 9px;
+  cursor: pointer;
+}
+
+#tasks .scrollbar {
+  width: 60px;
+}
+
+#tasks .adjust {
+  width: 70px;
+}
+
+#tasks .donecol {
+  width: 70px;
+}

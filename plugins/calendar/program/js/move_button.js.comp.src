@@ -1,0 +1,12 @@
+$(document).ready(function() {
+  rcmail.addEventListener('init', function(response) {
+    try{
+      if(rcmail && rcmail.buttons && rcmail.buttons['settings'] && rcmail.buttons['settings'][0]){
+        $('#calendar_button').insertBefore('#' + rcmail.buttons['settings'][0].id);
+      }
+    }
+    catch(e){
+    }
+    $('#calendar_button').show();
+  });
+});

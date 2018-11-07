@@ -1,0 +1,8 @@
+plugin_manager
+==============
+
+Version 21.0
+------------
+
+Database adjustments are required. If adjustment script does not launch
+automatically then run ./plugins/plugin_manager/SQL/[...].20131209.sql.

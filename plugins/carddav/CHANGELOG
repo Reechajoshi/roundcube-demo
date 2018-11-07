@@ -1,0 +1,79 @@
+VERSION                COMMENT
+-----------------------------------------------------------------------------------------------------------------
+3.0                    - Moved advanced features to carddav_plus plugin
+3.1                    - Fixed a carddav_addressbook.php :: set_filter
+                         (*) check if value is array
+3.2                    - Give local addressbooks back to user's control in
+                         addressbook settings section
+3.2.1                  - Changes from 3.2 are now configurable:
+                         $rcmail_config['show_empty_database_addressbooks'] = false;
+3.2.2                  - Paritial fix of http://code.google.com/p/myroundcube/issues/detail?id=457
+3.2.3                  - Fix http://code.google.com/p/myroundcube/issues/detail?id=457
+3.2.4                  - Code clean up
+3.2.5                  - Added a hint in config.inc.php.dist regarding user mapping
+3.2.6                  - Code clean up
+3.2.7                  - Added PostgreSQL database script
+3.2.8                  - Set Referrer for remote requests
+3.2.9 - 3.2.11         - Cleanup vcard before writing to database (better Roundcube compatibility)
+3.2.12                 - Fixed contacts sort order
+3.2.13                 - identities_imap compatibility
+4.0                    - Moved advanced addressbook features to carddav_plus
+4.0.1                  - Redundantcode removed
+5.0                    - Detect, delete and create collections
+5.0.1                  - Sanitize url for MKCOL request
+5.1                    - Roundcube 0.9 compatibility
+5.2                    - Don't recreate deleted CardDAV addressbooks
+5.3                    - Fixed sort order bug
+5.3.1                  - Fixed "SERVICE CURRENTLY NOT AVAILABLE! Addressbook source (null) not found!" bug
+5.3.2                  - Disallow creating contacts without email address (same behavior as default addressbooks)
+5.3.3                  - DAViCal needs header Depth: 1 for PROPFIND requests to return addresses
+5.3.4                  - Don't try to write into automatic addressbook if $CONTACTS is no object of
+                         method 'insert' does not exist
+5.3.5                  - Support for carddav_plus advanced search
+5.3.6                  - Bug fix: some fields for advanced search didn't work
+5.3.7                  - Advanced search contact sort order according to settings
+5.3.8                  - Implemented 'addressbook_search_mode' for quick/advanced search
+                         (still missing for autocomplete - that's next)
+5.3.9                  - Implemented 'addressbook_search_mode' for autocompletion
+5.3.10                 - Fixed bug: PHP Fatal error:  Cannot access protected property rcube_db_mysql::$db_error
+                         in ./plugins/carddav/carddav_addressbook.php on line 1408
+5.3.11                 - Added database sequences to config.inc.php.dist (PostgreSQL)
+5.4                    - Implemented database versioning
+5.4.1                  - Display phote in message view
+5.4.2 - 5.4.3          - Do not replace underscore in URLs
+5.4.4                  - Load carddav_plus automatically if available
+5.4.5                  - Accept upercase in CardDAV URLs
+5.4.6 - 5.4.7          - GUI improvements
+5.4.8                  - Fix for outdated DAVical installations
+5.4.9                  - Bugfix: Mailto from left pane in addressbook didn't work
+5.4.10 - 5.4.15        - Support not standard ports for DAV-URLs
+5.4.16                 - Fixed 'illegal string offset' warning
+5.4.17                 - Bugfix: Save URL port only if present
+5.4.18                 - Alter database scheme, table carddav_contacts, set fields etag and carddav_id VARCHAR (255)
+                         for long UID's
+5.4.19 - 5.4.20        - Implemented https://code.google.com/p/myroundcube/issues/detail?id=434
+5.4.21                 - Implemented user_create hook to setup CalDAVs for new users
+5.4.22                 - Previous version crashed if carddav_plus was not installed
+5.4.23                 - Fixed collected contacts
+5.4.24 - 5.4.25        - Jappix4Roundcube adjustments
+5.4.26                 - Removed jsdialogs specific things
+5.4.27                 - PostgreSQL fix (don't check for !== null, PostgreSQL returns false)
+5.4.28                 - Implemented tabbed plugin
+5.4.29                 - Fixed multiple search results of same contact for Compose Addressbook
+5.4.30                 - Fixed typos in config.inc.dist (group tables and sequences)
+5.4.31                 - Removed debug code
+5.4.32                 - Applied patch: https://github.com/graviox/Roundcube-CardDAV/issues/28
+5.4.33                 - Reverted 5.4.32
+5.4.34                 - Fix javascript error if translation contains single quotes (f.e. can\'t)
+5.4.35                 - Implemented invitations to share addressbooks (carddav_plus)
+5.4.36                 - Compose addressbook: Don't show contacts without email address
+5.4.37                 - Database collation utf8_general_ci
+5.4.38                 - Bug fix: Drag/drop contacts was broken
+5.4.39                 - companyaddressbook adjustments
+5.4.40                 - Saving search results was broken
+5.4.41 - 5.4.42        - Implemented mysqladmin support
+5.4.43                 - @set_time_limit(0) for entire addressbook task to avoid timeout on first time sync
+5.4.44                 - Implementation of Google oAuth2 for CardDAV access to Google contacts
+5.4.45                 - Protect 'Google' label
+5.4.46 - 5.4.47        - Bugfix: Roundcube < 1.0 does not handle all date formats properly (birthday, anniversary fails
+                         for dd/mm, dd.mm, ...)

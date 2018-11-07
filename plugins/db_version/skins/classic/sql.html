@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><roundcube:object name="pagetitle" /></title>
+<roundcube:include file="/includes/links.html" />
+<script src="program/js/jquery.min.js" type="text/javascript"></script>
+<script src="program/js/common.js" type="text/javascript"></script>
+<script src="program/js/app.js" type="text/javascript"></script>
+<script type="text/javascript">
+var rcmail = new rcube_webmail();
+</script>
+</head>
+<body>
+
+<roundcube:include file="/includes/taskbar.html" />
+<roundcube:include file="/includes/header.html" />
+<roundcube:if condition="env:task == 'settings'" />
+  <roundcube:include file="/includes/settingstabs.html" />
+<roundcube:endif />
+
+<div id="mainscreen">
+##FORM##
+</div>
+<script type="text/javascript">
+$(document).ready(function(){ 
+rcmail.init();
+$('.button-logout').attr('onclick', '');
+});
+</script>
+</body>
+</html>

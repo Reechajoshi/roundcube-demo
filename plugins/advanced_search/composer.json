@@ -1,0 +1,23 @@
+{
+	"name": "gms-sa/advanced-search",
+	"type": "roundcube-plugin",
+	"description": "Advanced search allowing multiple search criteria and folder recursion",
+	"keywords": ["mail","search","advanced"],
+	"homepage": "http://github.com/GMS-SA/roundcube-advanced-search/tree/stable",
+	"license": "GPL-3.0",
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "http://plugins.roundcube.net"
+		}
+	],
+	"require": {
+		"roundcube/plugin-installer": ">=0.1.2"
+	},
+    "extra": {
+        "roundcube": {
+            "min-version": "0.9.4",
+            "max-version": "1.0.9999"
+        }
+    }
+}

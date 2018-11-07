@@ -1,0 +1,12 @@
+$(document).ready(function(){
+  rcmail.addEventListener('responseafterlist-contacts', carddav_remove_noemail, true);
+  rcmail.addEventListener('responseaftersearch-contacts', carddav_remove_noemail, true);
+});
+
+function carddav_remove_noemail(){
+  $('#contacts-table span').each(function(){
+    if($(this).attr('title') == ''){
+      $(this).parent().parent().remove();
+    }
+  });
+}

@@ -1,0 +1,18 @@
+VERSION                COMMENT
+-----------------------------------------------------------------------------------
+3.0                    - Compatibilty adjustments for SabreDAV 1.6.x, 1.7.x, 1.8.x
+4.0                    - Implementation for addressbooks and calendars sharing
+4.1                    - Use one SabreDAV installation for multiple Roundcube homes
+4.1.1 - 4.1.3          - Callbacks from SabreDAV to Roundcube can be established
+                         now over https (PHP cURL required)
+4.1.4                  - Lock mkcol and delete requests on collection for shared
+                         calendars
+4.1.5                  - Ported code to Roundcube 0.9
+4.1.6                  - Added PostgreSQL script
+5.0                    - Implemented authentication against IMAP server,
+                         removed SabreDAV 1.6.x and 1.7.x support
+5.1 - 5.1.1            - Improved resource sharing
+5.1.2                  - Added cPanel support for default Roundcube installation
+5.1.3                  - Fallback to database authentication if PHP imap is not
+                         installed
+5.1.4 - 5.1.8          - Re-coded sharing (copy_and_paste folder)

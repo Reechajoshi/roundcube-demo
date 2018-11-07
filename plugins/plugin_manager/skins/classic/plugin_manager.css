@@ -1,0 +1,15 @@
+/***************************************************************************
+ * This file is part of Roundcube "plugin_manager" plugin.              
+ *                                                                 
+ * Your are not allowed to distribute this file or parts of it.    
+ *                                                                 
+ * This file is distributed in the hope that it will be useful,    
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of  
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.          
+ *                                                                 
+ * Copyright (c) 2012 - 2014 Roland 'Rosali' Liebl - all rights reserved
+ * dev-team [at] myroundcube [dot] com
+ * http://myroundcube.com
+ ***************************************************************************/
+
+#plugin_manager_overlay{display:none; position:fixed; top:0; left:0; right:0; bottom:0; z-index:4999; background:rgba(0,0,0,0.5) !important; background:#F6F6F6; filter:alpha(opacity=90); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)"; width:expression(document.documentElement.clientWidth+'px'); height:expression(document.documentElement.clientHeight+'px');}#paypal{position:absolute; top:65px; right:45px; z-index:9999;}.qtip{max-width:none;}.asterix{display:inline; float:left; margin-left:5px;}.plugin_manager_ul{list-style:none; margin-top:0px;}.plugin_manager_ul li{padding-left:0px; margin-left:-40px;}.plugin_manager_ul input[type="checkbox"]{margin-left:0; vertical-align:bottom;}.pm_control input[type="checkbox"]{vertical-align:bottom;}.pm_section{float:left;}.pm_update{margin-top:0px; margin-bottom:0px; padding:0px 15px;}#prefs-title-right{color:#1f75cc; font-size:20px; float:right; margin-top:7px; margin-right:25px; display:inline;}#table{table-layout:fixed; width:100%;}#table tbody tr td{height:20px; padding:5px; font-size:13px; overflow:hidden; vertical-align:middle; word-wrap:break-word; text-overflow:ellipsis; -o-text-overflow:ellipsis; border:1px solid #EBEBEB; cursor:default;}#table thead tr th{height:20px; padding:5px; font-size:13px; overflow:hidden; vertical-align:middle; text-overflow:ellipsis; -o-text-overflow:ellipsis; border:2px solid #EBEBEB; cursor:default;}#rcheader{font-size:13px;}.vmismatch{background-color:#EF9398; border-radius:5px 5px; box-shadow:0pt 1px 3px rgba(0,0,0,0.1);}.vmatch{background-color:#A6EF7B; border-radius:5px 5px; box-shadow:0pt 1px 3px rgba(0,0,0,0.1);}.vupdate{background-color:#EF9398; border-radius:5px 5px; box-shadow:0pt 1px 3px rgba(0,0,0,0.1);}.rcok{background:url(traffic-light-off.png) no-repeat;}.rcupdate{background:url(traffic-light-exclamation.png) no-repeat;}.rcerror{background:url(traffic-light-exclamation.png) no-repeat;}#table .ok{background:url(traffic-light-off.png) center no-repeat;}#table .error{background:url(traffic-light-exclamation.png) center no-repeat;}#table .update{background:url(traffic-light-plus.png) center no-repeat;}#table .edit{background:url(traffic-light-pencil.png) center no-repeat;}#table .off{background:url(traffic-light-off.png) center no-repeat;}

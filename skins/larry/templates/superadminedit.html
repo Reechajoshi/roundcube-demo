@@ -1,0 +1,27 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+<head>
+<title><roundcube:object name="pagetitle" /></title>
+<roundcube:include file="/includes/links.html" />
+</head>
+<body class="iframe">
+
+<h1 class="boxtitle"><roundcube:object name="superadmin_menu_title" /></h1>
+
+<div id="preferences-details" class="boxcontent">
+<roundcube:object name="superadminform" class="propform" size="40" textareacols="40" textarearows="6" />
+</div>
+
+<div id="preferences-details" class="boxcontent">
+<roundcube:object name="superadmineditform" class="propform" size="40" textareacols="40" textarearows="6" />
+</div>
+
+<!-- <div class="footerleft formbuttons">
+	<roundcube:button command="save" type="input" class="button mainaction" label="save" />
+</div> -->
+
+
+<roundcube:include file="/includes/footer.html" />
+
+</body>
+</html>

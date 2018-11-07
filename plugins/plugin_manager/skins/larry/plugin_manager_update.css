@@ -1,0 +1,15 @@
+/***************************************************************************
+ * This file is part of Roundcube "plugin_manager" plugin.              
+ *                                                                 
+ * Your are not allowed to distribute this file or parts of it.    
+ *                                                                 
+ * This file is distributed in the hope that it will be useful,    
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of  
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.          
+ *                                                                 
+ * Copyright (c) 2012 - 2014 Roland 'Rosali' Liebl - all rights reserved
+ * dev-team [at] myroundcube [dot] com
+ * http://myroundcube.com
+ ***************************************************************************/
+
+.motd{z-index:9997; position:absolute; top:2px; left:50%; margin-left:-200px; width:400px; border-radius:5px; padding:10px 10px 10px 10px; -moz-border-radius:5px; border:1px solid #DEEEFC; background-color:#F2F9FF; text-align:justify; color:#3F70BA;}.updatepm{z-index:9998; position:absolute; top:2px; left:50%; margin-left:-200px; width:400px; border-radius:5px; padding:4px; -moz-border-radius:5px; border:1px solid #DEEEFC; background:url(download.png) 20px 8px no-repeat #F2F9FF; text-align:center; color:#3F70BA; cursor:pointer;}.updatepmrequired{z-index:9999; position:absolute; top:2px; left:50%; margin-left:-200px; width:400px; border-radius:5px; padding:4px; -moz-border-radius:5px; border:1px solid #FEEBAB; background:url(download.png) 20px 8px no-repeat #FEF8E1; text-align:center; color:#9E660D; cursor:pointer;}.myrcerror{z-index:9999; position:absolute; top:2px; margin-left:auto; left:50%; margin-left:-200px; width:400px; border-radius:5px; padding:4px; -moz-border-radius:5px; background-color:#FF6B61; border:1px solid #FF0800; text-align:center; color:#733737;}

@@ -1,0 +1,51 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+<head>
+<title><roundcube:object name="pagetitle" /></title>
+<link rel="stylesheet" type="text/css" href="skins/classic/common.css" />
+</head>
+<body>
+<div id='message'></div>
+<div id='toolbar' style="float: right">
+<roundcube:container name="toolbar" id="toolbar" />
+</div>
+<div id='print'>
+<span><roundcube:var name='session:username'/></span>
+<span>[<roundcube:label name='calendar.generated' />: <roundcube:object name='datetime'/>]</span>
+<br />
+<span><small><i><label for="view"><roundcube:label name="calendar.view" /></label>:&nbsp;<span id="view"><roundcube:label name="calendar.today" /></span>&nbsp;&minus;&nbsp;<label for="filter"><roundcube:label name="filter" /></label>:&nbsp;<span id="calfiltercontent"><roundcube:var name='session:calfiltertasks'/></i></small></span>
+<div id='tasks'></div>
+</div>
+<div id='user'>
+</div>
+<script type="text/javascript">
+$('#tasks').html(opener.$('#tasks').html());
+$('form').hide();
+$('input').remove();
+$('.donecol').get(0).innerHTML = '<roundcube:label name="calendar.category" />';
+var i = 0;
+$('.donecol').each(function(){
+  i++;
+  if(i > 1){
+    var css = $(this).attr('class');
+    css = css.split(' ');
+    if(css[1]){
+      $(this).html('&nbsp;' + css[1]);
+    }
+    else{
+      $(this).html('&nbsp;<roundcube:var name='config:default_category_label'/>');
+    }
+  }
+});
+$('th').each(function(){
+  $(this).attr('title', '');
+});
+$('td').each(function(){
+  $(this).attr('title', '');
+  $(this).css('background', 'white');
+});
+$('#tasks').show();
+calendar_commands.init();
+</script>
+</body>
+</html>

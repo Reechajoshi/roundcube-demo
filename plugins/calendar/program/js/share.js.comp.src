@@ -1,0 +1,46 @@
+$(document).ready(function(){
+  if(window.rcmail){
+    rcmail.addEventListener('init', function(evt){
+      rcmail.addEventListener('plugin.calendar_share_compose', calendar_share_compose);
+    });
+  }
+});
+
+function calendar_share_dialog(){
+  var buttons = [
+    { text: rcmail.gettext('calendar.send'), click: function(){ calendar_share_dialog_validate(); } },
+    { text: rcmail.gettext('calendar.cancel'), click: function() { $('#sharedialog').dialog('close'); } }
+  ];
+  $('#sharedialog').dialog({
+    modal: true,
+    title: rcmail.gettext('calendar.checkresources'),
+    width: 'auto',
+    buttons: buttons
+  });
+  return false;
+}
+
+function calendar_share_dialog_validate(){
+  var failure = true
+  $('.shareinvitation').each(function(){
+    if($(this).prop('checked')){
+      failure = false;
+    }
+  });
+  if(failure){
+    rcmail.display_message(rcmail.gettext('calendar.checkatleastoneresource'), 'error');
+  }
+  else{
+    calendar_share_dialog_submit();
+  }
+}
+
+function calendar_share_dialog_submit(){
+  $('#sharedialog').dialog('close');
+  rcmail.http_post('plugin.calendar_shareinvitation', unescape($('#formshareinvitation').serialize()));
+  $('.shareinvitation').prop('checked', false);
+}
+
+function calendar_share_compose(){
+  rcmail.open_compose_step( { _calendar_share_invitation: 1 } );
+}

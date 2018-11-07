@@ -1,0 +1,123 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+<head>
+<title><roundcube:object name="pagetitle" /></title>
+<link rel="stylesheet" type="text/css" href="skins/classic/settings.css" />
+<link rel="stylesheet" type="text/css" href="skins/larry/mail.css" />
+<roundcube:include file="/includes/links.html" />
+<roundcube:object name="cal_category_css" />
+</head>
+<body>
+<roundcube:include file="/includes/taskbar.html" />
+<roundcube:include file="/includes/header.html" />
+<div id='messagetoolbar' class='toolbar'>
+<roundcube:container name="toolbar" id="toolbar" />
+</div>
+<div id='calquicksearchbar'>
+<img id='calsearchmod' src='./plugins/calendar/skins/larry/images/glass_roll.png' title="<roundcube:label name="searchmod" />" />
+<input id='calsearchfilter' type='text' name='_cal_searchfilter' autocomplete="off" />
+<a href='#' id='calsearchreset'><img src='./plugins/calendar/skins/larry/images/reset.gif' width='13' height='13' /></a>
+</div>
+<div id='calsearchdialog' title='<roundcube:label name="calendar.calsearch" />'>
+<table id='calsearch_table' class='records-table' cols='1' cellspacing='0'></table>
+</div>
+<roundcube:object name="cal_searchset" />
+<div id='todaybutton'><center>
+  <input id="prevbut" class="button" type="button" title="<roundcube:label name="calendar.prevrange" />" value="<<" style="width:30px; text-align:center; cursor:pointer" />
+  <input id="todaybut" class="button" type="button" disabled="disabled" value="<roundcube:label name="today" />" style="width:100px; text-align:center; cursor:pointer" />
+  <input id="nextbut" class="button" type="button" title="<roundcube:label name="calendar.prevrange" />" value=">>" style="width:30px; text-align:center; cursor:pointer" />
+</center></div>
+<div id="calendar-header">
+  <div class="boxtitle">
+    <center>
+      <span id="cal_boxtitle" ></span>
+    </center>
+  </div>
+  <span id="taskstogglecontainer" style="display: none;"><div style="display: inline; float: right; margin-top: -20px;">[<a href="#" id="taskstoggle" title="<roundcube:label name="calendar.hide_tasks" />" style="text-decoration: none;">&minus;</a>]&nbsp;</div></span>
+</div>
+<div id="mainscreen">
+  <div id="sectionslist">
+    <div id="datepicker-title" class="boxtitle ui-widget-header"></div>
+    <div id="weeknumber" class="boxtitle ui-widget-header"></div>
+    <div class="boxtitle ui-widget-header">
+      <center>
+        <a href="#"><img src="plugins/calendar/skins/larry/images/dayview.png" id="daybut" title="<roundcube:label name="calendar.day" />" width="16" height="15" /></a>&nbsp;&nbsp;
+        <a href="#"><img src="plugins/calendar/skins/larry/images/weekview.png" id="weekbut" title="<roundcube:label name="calendar.week" />" width="16" height="15" /></a>&nbsp;&nbsp;
+        <a href="#"><img src="plugins/calendar/skins/larry/images/monthview.png" id="monthbut" title="<roundcube:label name="calendar.month" />" width="16" height="15" /></a>
+      </center>
+    </div>
+    <div type="text" id="jqdatepicker"></div>
+    <br />
+    <div id="subscriptions-table">
+      <roundcube:object name="subscriptions_table" />
+      <br />
+    </div>
+    <div id="upcoming-maincontainer">
+      <div id="upcoming"></div>
+    </div>
+  </div>
+  <div id="prefs-box">
+    <div id="calendar-container">
+      <div id="calendar"></div>
+      <div id="tasks">
+        <table cellspacing="0" cellpadding="0" width="100%" id="tasksheader">
+          <tr style="height:15px;"><th class="ui-widget-header"><roundcube:label name="calendar.tasks" /></th></tr>
+        </table>
+        <form name="taskquickinput" action="./?_task=dummy&_action=plugin.calendar" method="post">
+        <table cellspacing="0" cellpadding="0" width="100%">
+          <tr style="height:15px;">
+            <td class="ui-widget-header" width="100%" nowrap>&nbsp;<span id="taskscategories_html"></span><input style="width: 50%" name="_raw" id="taskquickinput" placeholder="<roundcube:label name="calendar.monday" />, <roundcube:label name="calendar.mowthelawn" />" />&nbsp;<input style="width: 10%" type="button" id="taskquickinputsubmit" class="button mainaction" value= '+' onclick=""/></td>
+          </tr>
+        </table>
+        </form>
+        <table cellspacing="0" cellpadding="0" width="100%" id="tasksfilter">
+          <tr style="height:25px;">
+            <th nowrap id="overdue" onclick="$('#view').html('<roundcube:label name="calendar.overdue" />'); $('.selected').removeClass('selected'); $(this).addClass('selected'); $('#taskscontent tr').hide(); $('#taskscontent .percentage').show(); $('.overdue').show(); if(!$('#taskscontent tr').is(':visible')){ $('.notasks').show() } else { $('.notasks').hide() };" class="ui-widget-header" title="<roundcube:label name="calendar.overdue" />">&nbsp;<a href="#"><roundcube:label name="calendar.overdue" /></a>&nbsp;<div id="coverdue" class="count">(0)</div></th>
+            <th nowrap id="today" onclick="$('#view').html('<roundcube:label name="calendar.today" />'); $('.selected').removeClass('selected'); $(this).addClass('selected'); $('#taskscontent tr').hide(); $('#taskscontent .percentage').show(); $('.today').show(); if(!$('#taskscontent tr').is(':visible')){ $('.notasks').show() } else { $('.notasks').hide() };" class="ui-widget-header selected" title="<roundcube:label name="calendar.today" />">&nbsp;<a href="#"><roundcube:label name="calendar.today" /></a>&nbsp;<div id="ctoday" class="count">(0)</div></th>
+            <th nowrap id="tomorrow" onclick="$('#view').html('<roundcube:label name="calendar.tomorrow" />'); $('.selected').removeClass('selected'); $(this).addClass('selected'); $('#taskscontent tr').hide(); $('#taskscontent .percentage').show(); $('.tomorrow').show(); if(!$('#taskscontent tr').is(':visible')){ $('.notasks').show() } else { $('.notasks').hide() };" class="ui-widget-header" title="<roundcube:label name="calendar.tomorrow" />">&nbsp;<a href="#"><roundcube:label name="calendar.tomorrow" /></a>&nbsp;<div id="ctomorrow" class="count">(0)</div></th>
+            <th nowrap id="sevendays" onclick="$('#view').html('<roundcube:label name="calendar.sevendays" />'); $('.selected').removeClass('selected'); $(this).addClass('selected'); $('#taskscontent tr').hide(); $('#taskscontent .percentage').show(); $('.sevendays').show(); if(!$('#taskscontent tr').is(':visible')){ $('.notasks').show() } else { $('.notasks').hide() };" class="ui-widget-header" title="<roundcube:label name="calendar.sevendays" />">&nbsp;<a href="#"><roundcube:label name="calendar.sevendays" /></a>&nbsp;<div id="csevendays" class="count">(0)</div></th>
+            <th nowrap id="later" onclick="$('#view').html('<roundcube:label name="calendar.later" />'); $('.selected').removeClass('selected'); $(this).addClass('selected'); $('#taskscontent tr').hide(); $('#taskscontent .percentage').show(); $('.later').show(); if(!$('#taskscontent tr').is(':visible')){ $('.notasks').show() } else { $('.notasks').hide() };" class="ui-widget-header" title="<roundcube:label name="calendar.later" />">&nbsp;<a href="#"><roundcube:label name="calendar.later" /></a>&nbsp;<div id="clater" class="count">(0)</div></th>
+            <th nowrap id="nodate" onclick="$('#view').html('<roundcube:label name="calendar.nodate" />'); $('.selected').removeClass('selected'); $(this).addClass('selected'); $('#taskscontent tr').hide(); $('#taskscontent .percentage').show(); $('.nodate').show(); if(!$('#taskscontent tr').is(':visible')){ $('.notasks').show() } else { $('.notasks').hide() };" class="ui-widget-header" title="<roundcube:label name="calendar.nodate" />">&nbsp;<a href="#"><roundcube:label name="calendar.nodate" /></a>&nbsp;<div id="cnodate" class="count">(0)</div></th>
+            <th nowrap id="high" onclick="$('#view').html('<roundcube:label name="calendar.high" />'); $('.selected').removeClass('selected'); $(this).addClass('selected'); $('#taskscontent tr').hide(); $('#taskscontent .percentage').show(); $('.high').show(); if(!$('#taskscontent tr').is(':visible')){ $('.notasks').show() } else { $('.notasks').hide() };" class="ui-widget-header" title="<roundcube:label name="calendar.highpriority" />">&nbsp;<a href="#"><roundcube:label name="calendar.high" /></a>&nbsp;<div id="chigh" class="count">(0)</div></th>
+            <th nowrap id="low" onclick="$('#view').html('<roundcube:label name="calendar.low" />'); $('.selected').removeClass('selected'); $(this).addClass('selected'); $('#taskscontent tr').hide(); $('#taskscontent .percentage').show(); $('.low').show(); if(!$('#taskscontent tr').is(':visible')){ $('.notasks').show() } else { $('.notasks').hide() };" class="ui-widget-header" title="<roundcube:label name="calendar.lowpriority" />">&nbsp;<a href="#"><roundcube:label name="calendar.low" /></a>&nbsp;<div id="clow" class="count">(0)</div></th>
+            <th nowrap id="all" onclick="$('#view').html('<roundcube:label name="calendar.all" />'); $('.selected').removeClass('selected'); $(this).addClass('selected'); $('#taskscontent tr').hide(); $('#taskscontent .percentage').show(); $('.all').show(); if(!$('#taskscontent tr').is(':visible')){ $('.notasks').show() } else { $('.notasks').hide() };" class="ui-widget-header" title="<roundcube:label name="calendar.all" />">&nbsp;<a href="#"><roundcube:label name="calendar.all" /></a>&nbsp;<div id="call" class="count">(0)</div></th>
+            <th nowrap id="complete" onclick="$('#view').html('<roundcube:label name="calendar.complete" />'); $('.selected').removeClass('selected'); $(this).addClass('selected'); $('#taskscontent tr').hide(); $('#taskscontent .percentage').show(); $('.complete').show(); if(!$('#taskscontent tr').is(':visible')){ $('.notasks').show() } else { $('.notasks').hide() };" class="ui-widget-header" title="<roundcube:label name="calendar.complete" />">&nbsp;<a href="#"><roundcube:label name="calendar.complete" /></a>&nbsp;<div id="ccomplete" class="count">(0)</div></th>
+          </tr>
+        </table>
+        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+          <tbody>
+            <tr>
+              <th title="<roundcube:label name="calendar.done" />" class="ui-widget-header donecol"><input type="checkbox" checked disabled /></th>
+              <th title="<roundcube:label name="calendar.priority" />" class="ui-widget-header" style="width: 12px;">&nbsp;!&nbsp;</th>
+              <th title="<roundcube:label name="calendar.summary" />" class="ui-widget-header">&nbsp;<roundcube:label name="calendar.summary" />&nbsp;</th>
+              <th title="<roundcube:label name="calendar.start" />" class="ui-widget-header adjust">&nbsp;<roundcube:label name="calendar.start" />&nbsp;</th>
+              <th title="<roundcube:label name="calendar.due" />" class="ui-widget-header adjust">&nbsp;<roundcube:label name="calendar.due" />&nbsp;</th>
+              <th title="<roundcube:label name="calendar.completed" />" class="ui-widget-header adjust">&nbsp;<roundcube:label name="calendar.completed" />&nbsp;</th>
+              <th title="<roundcube:label name="calendar.percentage" />" class="ui-widget-header" style="width: 60px;">&nbsp;%&nbsp;</th>
+              <th title="<roundcube:label name="calendar.status" />" class="ui-widget-header" style="width: 60px;">&nbsp;<roundcube:label name="calendar.status" />&nbsp;</th>
+            </tr>
+          </tbody>
+        </table>
+        <div id="taskscontent"></div>
+      </div>
+    </div>
+  </div>
+  <roundcube:object name="message" id="message" class="calstatusbar ui-widget-header" />
+</div>
+<roundcube:object name="event_dialog" />
+<div id="printmenu" class="popupmenu" style="display: none;">
+  <ul class="toolbarmenu">
+    <li><a class="eventsprint active" href="#" onclick="return rcmail.command('plugin.events_print','sub',this,event)"><roundcube:label name="calendar.events" /></a></li>
+    <li><a class="tasksprint active" href="#" onclick="return rcmail.command('plugin.tasks_print','sub',this,event)"><roundcube:label name="calendar.tasks" /></a></li>
+  </ul>
+</div>
+<div id="calswitch">
+  <form name="switch" id="switch" method="post" action="./?_task=dummy&_action=plugin.calendar">
+    <label for="cal_user"><roundcube:label name="calendar.cal_user" /></label>:&nbsp;
+    <span id="calusers"></span>
+  </form>
+</div>
+<div id="calendaroverlay"></div>
+<roundcube:include file="/includes/footer.html" />
+</body>
+</html>

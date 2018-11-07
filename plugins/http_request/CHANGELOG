@@ -1,0 +1,6 @@
+VERSION                COMMENT
+-------------------------------------------------------------------------------
+1.4                    - Renamed backend class to MyRCHttp to avoid naming
+                         conflicts with other plugins (Roundcube's password
+                         plugin)
+1.5                    - Roundcube 1.0 compatibility
